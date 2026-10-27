@@ -59,3 +59,5 @@ Jaegerはホスト側のブラウザで http://localhost:16686 を開いてく�
 
 AWSとGitHub CLIは、ホストの `~/.aws` と `~/.config/gh` を読み取り専用で参照します。AWSのプロファイルは `AWS_PROFILE`、リージョンは `AWS_REGION` で指定でき、未指定時はそれぞれ `default` と `ap-northeast-2` です。AWS SSOなどの認証更新はホスト側で行ってください。読み取り専用なのは認証ファイルのマウントであり、AWSやGitHubに対する操作権限は認証情報に依存します。
 # opentelemetry_practice
+
+GitHub CLIの認証の使い分けは [GitHub CLI利用手順](docs/github-cli.md) を参照してください。

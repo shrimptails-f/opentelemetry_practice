@@ -1,0 +1,22 @@
+{
+  "name": "OpenTelemetry Practice DevContainer",
+  "dockerComposeFile": ["../compose.yaml", "compose.yaml"],
+  "service": "app",
+  "workspaceFolder": "/workspace/opentelemetry-practice",
+  "remoteUser": "dev",
+  "postCreateCommand": "go mod download",
+  "forwardPorts": [8080, 16686],
+  "portsAttributes": {
+    "8080": { "label": "Order API" },
+    "16686": { "label": "Jaeger" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go", "redhat.vscode-yaml"],
+      "settings": {
+        "files.eol": "\n",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

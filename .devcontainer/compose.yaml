@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    command: sleep infinity
+    working_dir: /workspace/opentelemetry-practice
+    environment:
+      AWS_PROFILE: ${AWS_PROFILE:-default}
+      AWS_REGION: ${AWS_REGION:-ap-northeast-2}
+      AWS_DEFAULT_REGION: ${AWS_REGION:-ap-northeast-2}
+    depends_on:
+      - order-api
+    volumes:
+      - .:/workspace/opentelemetry-practice
+      - ${HOME}/.aws:/home/dev/.aws:ro
+      - ${HOME}/.config/gh:/home/dev/.config/gh:ro
+      - go-modules:/home/dev/go/pkg/mod
+      - codex-home:/home/dev/.codex
+      - claude-home:/home/dev/.claude
+
+volumes:
+  go-modules:
+  codex-home:
+  claude-home:
