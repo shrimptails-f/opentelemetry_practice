@@ -63,3 +63,5 @@ AWSとGitHub CLIは、ホストの `~/.aws` と `~/.config/gh` を読み取り�
 GitHub CLIの認証の使い分けは [GitHub CLI利用手順](docs/github-cli.md) を参照してください。
 
 Dev Containerのターミナルでは、`task codex` または `task claude` で各CLIを起動できます。これらはそれぞれ承認・サンドボックス、権限確認をスキップする設定です。
+
+`task codex` はホストと共有するCodex設定を使い、Dev Containerではdaemonを使わずに起動します。
