@@ -17,10 +17,8 @@ services:
       - ${HOME}/.aws:/home/dev/.aws:ro
       - ${HOME}/.config/gh:/home/dev/.config/gh:ro
       - go-modules:/home/dev/go/pkg/mod
-      - codex-home:/home/dev/.codex
-      - claude-home:/home/dev/.claude
+      - ${HOME}/.codex:/home/dev/.codex
+      - ${HOME}/.claude:/home/dev/.claude
 
 volumes:
   go-modules:
-  codex-home:
-  claude-home:

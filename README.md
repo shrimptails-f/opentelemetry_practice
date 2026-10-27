@@ -46,7 +46,7 @@ docker compose down
 
 ## Dev Containerで開く
 
-VS CodeにDev Containers拡張機能とDockerを用意し、このディレクトリを開いて、コマンドパレットから「Dev Containers: Reopen in Container」を選びます。初回はイメージのビルドとGoモジュールのダウンロードに時間がかかります。開発用コンテナにはGo 1.26、AWS CLI、curl、Git、GitHub CLI、Task、Codex CLI、Claude Codeが入り、GoのモジュールキャッシュとCodex・Claudeの設定はDockerのボリュームに保存されます。各CLIは初回利用時にそれぞれ認証してください。
+VS CodeにDev Containers拡張機能とDockerを用意し、このディレクトリを開いて、コマンドパレットから「Dev Containers: Reopen in Container」を選びます。初回はイメージのビルドとGoモジュールのダウンロードに時間がかかります。開発用コンテナにはGo 1.26、AWS CLI、curl、Git、GitHub CLI、Task、Codex CLI、Claude Codeが入り、GoのモジュールキャッシュはDockerのボリュームに保存されます。CodexとClaude Codeはホストの `~/.codex` と `~/.claude` を読み書き可能に共有します。ホスト側の設定やセッションも共有されます。Claude Codeをホストでまだ認証していない場合は、初回にログインしてください。
 
 開くと注文API、在庫API、Collector、Jaegerも起動します。コンテナ内のターミナルからはサービス名を使います。
 
