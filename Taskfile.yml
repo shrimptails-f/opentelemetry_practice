@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  codex:
+    desc: Codex を起動（コンテナ内）
+    interactive: true
+    cmds:
+      - codex --dangerously-bypass-approvals-and-sandbox
+
+  claude:
+    desc: Claude Code を起動（コンテナ内）
+    interactive: true
+    cmds:
+      - claude --dangerously-skip-permissions
